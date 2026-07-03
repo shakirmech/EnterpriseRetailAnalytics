@@ -1,0 +1,16 @@
+# Power BI
+*.pbix.autosave
+
+# SQL Server
+*.ldf
+*.mdf
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

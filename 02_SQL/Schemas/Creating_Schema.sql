@@ -1,0 +1,11 @@
+USE EnterpriseRetailDW;
+GO
+
+CREATE SCHEMA stg;
+GO
+
+CREATE SCHEMA dw;
+GO
+
+CREATE SCHEMA rpt;
+GO

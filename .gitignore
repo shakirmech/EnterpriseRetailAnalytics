@@ -1,16 +1,41 @@
-# Power BI
-*.pbix.autosave
-
-# SQL Server
-*.ldf
+# ==========================
+# SQL Server Database Files
+# ==========================
 *.mdf
+*.ldf
+*.ndf
+*.bak
+*.trn
 
+# ==========================
+# SQL Server Temp Files
+# ==========================
+*.log
+
+# ==========================
+# Visual Studio Code
+# ==========================
+.vscode/
+
+# ==========================
 # Windows
+# ==========================
 Thumbs.db
 Desktop.ini
 
-# VS Code
-.vscode/
+# ==========================
+# Power BI Auto Recovery
+# ==========================
+*.pbix.autosave
 
-# Logs
-*.log
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.pyc
+
+# ==========================
+# Temporary Files
+# ==========================
+*.tmp
+*.temp

@@ -33,6 +33,44 @@ The objective is to design and build an end-to-end analytics platform, including
 
 ---
 
-## Project Status
+## Project Architecture
 
-Sprint 1 - Environment Setup ✅
+CSV Files
+
+↓
+
+Staging Layer
+
+↓
+
+Dimension Tables
+
+↓
+
+Fact Table
+
+↓
+
+Power BI Dashboard
+
+---
+
+## Current Progress
+
+- Database Created
+- Staging Schema Created
+- Staging Tables Loaded
+- DimCustomer Completed
+- DimProduct Completed
+- DimSeller In Progress
+
+---
+
+## Dataset
+
+Brazilian Olist E-commerce Dataset
+
+Source:
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+---

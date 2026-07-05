@@ -31,12 +31,13 @@ FROM
     FROM stg.orders
 ) AllDates;
 
-SET @EndDate = DateADD(Year, 2, @EndDate)
+SET @EndDate = DateADD(YEAR, 2, @EndDate)
 
 WHILE @StartDate <= @EndDate
 BEGIN
     INSERT INTO dbo.DimDate
     (
+        DateKey,
         FullDate,
         DayNumber,
         MonthNumber,
@@ -48,15 +49,16 @@ BEGIN
         IsWeekend
     )
     VALUES
-   (
+    (
+        CONVERT(INT, FORMAT(@StartDate,'yyyyMMdd')),
         @StartDate,
         DAY(@StartDate),
         MONTH(@StartDate),
         DATENAME(MONTH, @StartDate),
         DATEPART(QUARTER, @StartDate),
-        YEAR(@StateDate),
+        YEAR(@StartDate),
         DATEPART(WEEK, @StartDate),
-        DATENAME(WEEKDAY, @StartDate)
+        DATENAME(WEEKDAY, @StartDate),
 
         CASE 
             WHEN DATENAME(WEEKDAY, @StartDate)
@@ -64,9 +66,19 @@ BEGIN
             THEN 1
             ELSE 0
         END
-    )
-    SET @StartDate = DATEADD(DAY, 1, @StartDate)
+     )
+    SET @StartDate = DATEADD(DAY, 1, @StartDate);
 END
 GO
         
 
+SELECT TOP(20)* FROM dbo.DimDate
+
+SELECT COUNT(*) AS TotalDays FROM dbo.DimDate
+
+SELECT
+    MonthName,
+    COUNT(*) AS DaysInMonth
+FROM dbo.DimDate
+GROUP BY MonthName
+ORDER BY MIN(MonthNumber);

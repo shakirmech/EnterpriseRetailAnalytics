@@ -7,9 +7,9 @@ GO
 
 CREATE TABLE dbo.DimDate
 (
-    DateKey INT IDENTITY(1,1) NOT NULL,
+    DateKey INT NOT NULL,
         CONSTRAINT PK_DimDate
-        PRIMARY KEY (DateKey)
+        PRIMARY KEY (DateKey),
     FullDate DATE NOT NULL,
     DayNumber TINYINT NOT NULL,
     MonthNumber  TINYINT NOT NULL,

@@ -56,7 +56,7 @@ FOREIGN KEY (OrderDateKey)
 REFERENCES dbo.DimDate(DateKey)
 GO
 
-
+exec sp_help 'dbo.FactSales'
 
 
 
